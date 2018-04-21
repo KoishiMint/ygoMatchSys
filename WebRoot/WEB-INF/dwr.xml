@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN" "http://getahead.org/dwr//dwr30.dtd">
+<dwr>
+	<allow>	
+		<!-- for index.jsp use -->
+		<create creator="new" javascript="user">
+			<param name="class" value="util.User" />
+		</create>
+		<create creator="new" javascript="host">
+			<param name="class" value="util.Host" />
+		</create>
+		
+		<convert match="dto.LoginData" converter="bean">
+			<param name="include" value="userName,userID,IP,wrongTime,userType,lastIP,lastloginDate,firstLogin"/>
+		</convert>
+		<convert match="dto.RegisterData" converter="bean">
+			<param name="include" value="password,userName,wrongReason"/>
+		</convert>
+		<convert match="dto.MatchData" converter="bean">
+			<param name="include" value="macName,macTime,macLogger,macID,macStat,macInfo,macType,regTime,regNum,banlist"/>
+		</convert>
+		<convert match="dto.MatchReg" converter="bean">
+			<param name="include" value="macID,macName,userID"/>
+		</convert>
+		
+	
+		<!-- index.jsp use ending -->
+		
+		<!-- for service promote -->
+		<!-- service promote ending -->
+	</allow>
+</dwr>
